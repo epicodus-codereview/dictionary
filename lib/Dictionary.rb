@@ -1,12 +1,13 @@
-class Dictionary
+class Word
 
   @@all_words  = []
 
-  attr_reader(:word, :word_id)
+  attr_reader(:word, :word_id, :definition)
 
   def initialize(word)
     @word = word
     @word_id = @@all_words.length.+(1)
+    @definition = []
   end
 
   def save
@@ -17,17 +18,18 @@ class Dictionary
     @@all_words
   end
 
-  define_singleton_method(:clear) do
-    @@all_words = []
-  end
-
   define_singleton_method(:word_find) do |identification|
     found_word = nil
-    @@all_words.each() do |word|
-      if word.word_id().eql?(identification.to_i())
-        found_word = word
+    @@all_words.each() do |dictionary|
+      if dictionary.word_id().eql?(identification.to_i())
+        found_word = dictionary
       end
     end
     found_word
   end
+
+  define_method(:add_definition) do |definition|
+    @definition.push(definition)
+  end
+
 end# end class
