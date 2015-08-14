@@ -2,7 +2,7 @@ class Dictionary
 
   @@all_words  = []
 
-  attr_reader(:word)
+  attr_reader(:word, :word_id)
 
   def initialize(word)
     @word = word
@@ -20,5 +20,6 @@ class Dictionary
   define_singleton_method(:clear) do
     @@all_words = []
   end
+
 
 end# end class

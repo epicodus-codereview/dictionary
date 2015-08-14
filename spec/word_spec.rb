@@ -25,4 +25,14 @@ end
     end
   end
 
+  describe('#word_id') do
+    it('gives the added word an id') do
+    test_word = Dictionary.new("apple")
+    test_word.save()
+    expect(test_word.word_id()).to(eq(1))
+  end
+end
+
+
+
 end#ends the spec
