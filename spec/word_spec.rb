@@ -18,4 +18,11 @@ describe(Dictionary) do
   end
 end
 
+  describe('.clear') do
+    it('removes all the words') do
+      test_word = Dictionary.new("apple")
+      expect(Dictionary.clear()).to(eq([]))
+    end
+  end
+
 end#ends the spec
