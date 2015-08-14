@@ -33,6 +33,14 @@ end
   end
 end
 
-
+  describe('.word_find') do
+  it("returns the word id") do
+    test_word = Dictionary.new("apple")
+    test_word.save()
+    test_word2 = Dictionary.new("Banana")
+    test_word2.save()
+    expect(Dictionary.word_find(test_word.word_id())).to(eq(test_word))
+    end
+  end
 
 end#ends the spec

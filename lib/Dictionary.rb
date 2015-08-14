@@ -21,5 +21,13 @@ class Dictionary
     @@all_words = []
   end
 
-
+  define_singleton_method(:word_find) do |identification|
+    found_word = nil
+    @@all_words.each() do |word|
+      if word.word_id().eql?(identification.to_i())
+        found_word = word
+      end
+    end
+    found_word
+  end
 end# end class
