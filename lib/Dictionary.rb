@@ -4,7 +4,7 @@ class Word
 
   attr_reader(:word, :word_id, :definition)
 
-  def initialize(word)
+  def initialize 
     @word = word
     @word_id = @@all_words.length.+(1)
     @definition = []

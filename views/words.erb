@@ -3,8 +3,7 @@
 <h3>Here are the words in this dictionary:</h3>
 
 <ul>
-  <% @test_words.each() do |posting| %>
-  <li><a href="/words<%= posting.word_id() %>">
-    <%= posting.word() %></a></li>
-    <% end %>
+  <% @test_words.each() do |word| %>
+  <li><a href="/words/<%= word.word_id() %>"><%= word %> </a></li>
+  <% end %>
 </ul>
