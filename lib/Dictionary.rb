@@ -2,12 +2,12 @@ class Word
 
   @@all_words  = []
 
-  attr_reader(:word, :word_id, :definition)
+  attr_reader(:word, :word_id, :definitions)
 
-  def initialize 
+  def initialize (word) # you need to accept the word parameter that you are using on line 8 to initialize the word
     @word = word
     @word_id = @@all_words.length.+(1)
-    @definition = []
+    @definitions = []
   end
 
   def save
@@ -29,7 +29,12 @@ class Word
   end
 
   define_method(:add_definition) do |definition|
-    @definition.push(definition)
+    @definitions.push(definition)
+  end
+
+  # add clear method needed to clear everything between spec runs
+  define_singleton_method(:clear) do
+    @@all_words = []
   end
 
 end# end class

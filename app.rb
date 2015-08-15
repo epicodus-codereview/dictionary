@@ -24,15 +24,13 @@ post('/words') do
   erb(:success)
 end
 
-get('/definition/:id') do
-  @definition = Definition.define_find(params.fetch('id').to_i())
-  erb(:definition)
-end
+# removed below because no need for an individual definition details page. All definitions should show up on the word details page.
+# get('/definition/:id') do
+#   @definition = Definition.define_find(params.fetch('id').to_i())
+#   erb(:definition)
+# end
 
 get('/words/:id') do
   @word = Word.word_find(params.fetch('id'))
   erb(:word)
-end
-
-
 end

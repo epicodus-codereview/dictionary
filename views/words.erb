@@ -4,6 +4,10 @@
 
 <ul>
   <% @test_words.each() do |word| %>
-  <li><a href="/words/<%= word.word_id() %>"><%= word %> </a></li>
+    <li><a href="/words/<%= word.word_id() %>"><%= word.word() %> </a></li>
   <% end %>
 </ul>
+
+<!-- You were displaying the word object itself on line 7, not it's @word attribute. I changed word to word.word() on line 7 because you want to display the word's @word string, not the word object itself. (This is particularly confusing due to using the same name.) -->
+
+<!-- indentation fixed on line 7 -->
